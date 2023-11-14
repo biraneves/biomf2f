@@ -3,10 +3,17 @@
 #include <sstream>
 
 int main(int argc, char* argv[]) {
+  bool verboso = false;
+  
   // Verifica se è stato fornito un nome di file
-  if (argc != 2) {
+  if (argc < 2) {
     std::cerr << "Uso: biomf2f <file_multifasta>" << std::endl;
     return 1;
+  }
+
+  // Verifica se esiste l'opzione di output verboso
+  if (argc > 2 && std::string(argv[2]) == "-v") {
+      verboso = true;
   }
 
   // Apre il file multifasta per la lettura
@@ -27,7 +34,10 @@ int main(int argc, char* argv[]) {
     if (riga[0] == '>') {
       if (fileFastaCorrente.is_open()) {
 	fileFastaCorrente.close();
+	if (verboso) std::cout << ". ✔︎" << std::endl;
       }
+
+      if (verboso) std::cout << "Creando il file 'sequenza_" << numeroDiSequenza << ".fasta'.";
 
       std::ostringstream nomeFile;
       nomeFile << "sequenza_" << numeroDiSequenza << ".fasta";
@@ -38,6 +48,8 @@ int main(int argc, char* argv[]) {
 	return 1;
       }
 
+      if (verboso) std::cout << ".";
+
       numeroDiSequenza++;
     }
 
@@ -45,6 +57,7 @@ int main(int argc, char* argv[]) {
     if (fileFastaCorrente.is_open()) {
       fileFastaCorrente << riga << '\n';
     }
+
   }
 
   // Chiude l'ultimo file fasta se è aperto
@@ -52,6 +65,10 @@ int main(int argc, char* argv[]) {
     fileFastaCorrente.close();
   }
 
-  std::cout << "Conclusione dell'elaborazione dei file fasta" << std::endl;
+  if (verboso) {
+    std::cout << ". ✔︎" << std::endl;
+    std::cout << "Conclusione dell'elaborazione dei file fasta" << std::endl;
+  }
+  
   return 0;
 }
