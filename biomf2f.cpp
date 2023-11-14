@@ -17,14 +17,14 @@ int main(int argc, char* argv[]) {
     return 1;
   }
 
-  std::string linea;
+  std::string riga;
   std::ofstream fileFastaCorrente;
   int numeroDiSequenza = 0;
 
   // Elabora il file riga per riga
-  while (std::getline(fileMultifasta, linea)) {
+  while (std::getline(fileMultifasta, riga)) {
     // Se la riga è un'intestazione di sequenza
-    if (linea[0] == '>') {
+    if (riga[0] == '>') {
       if (fileFastaCorrente.is_open()) {
 	fileFastaCorrente.close();
       }
@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
 
     // Scrivi la linea nel file fasta corrente
     if (fileFastaCorrente.is_open()) {
-      fileFastaCorrente << linea << '\n';
+      fileFastaCorrente << riga << '\n';
     }
   }
 
