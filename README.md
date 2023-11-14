@@ -34,9 +34,45 @@ Per abilitare l'output verboso, aggiungi l'opzione `/v`:
 ./biomf2f percorso/al/tuo/file.fasta -v
 ```
 
-## Contribuire
+## Prossimi passi per lo sviluppo di biomf2f
 
-Sei invitato a contribuire al progetto biomf2f! Se hai un'idea o una proposta, sentiti libero di aprire una issue o una pull request.
+Il progetto `biomf2f` è in continua evoluzione. Di seguito è riportata una lista di miglioramenti e funzionalità che prevediamo di implementare in futuro:
+
+1. **Supporto per Altri Formati di File**: Aggiunta di compatibilità con formati come GenBank o EMBL.
+
+2. **Interfaccia Grafica Utente (GUI)**: Sviluppo di una GUI intuitiva per facilitare l'uso a chi preferisce evitare la linea di comando.
+
+3. **Validazione dei File di Input**: Implementazione di controlli avanzati per assicurare l'integrità e il formato corretto dei file multifasta.
+
+4. **Opzioni Avanzate da Linea di Comando**: Inclusione di opzioni per definire un percorso di output e personalizzare prefissi o suffissi dei file risultanti.
+
+5. **Rapporto di Sommario del Processamento**: Generazione di un rapporto post-elaborazione che riassume le sequenze trattate e gli errori rilevati.
+
+6. **Ottimizzazione delle Prestazioni**: Benchmarking e miglioramento delle prestazioni per il trattamento di file di grandi dimensioni.
+
+7. **Integrazione con Strumenti di Bioinformatica**: Facilitazione dell'integrazione con pipeline e strumenti bioinformatici esistenti.
+
+8. **Documentazione Approfondita**: Creazione di documentazione dettagliata con esempi pratici d'uso.
+
+9. **Test Automatizzati**: Sviluppo di test automatici per garantire la stabilità del software.
+
+10. **Parallelizzazione**: Implementazione del processamento parallelo per sfruttare sistemi multicore.
+
+11. **Installazione Semplificata**: Creazione di script di installazione per vari sistemi operativi.
+
+12. **Sistema di Log**: Introduzione di un sistema di log per registrare dettagliatamente le operazioni e gli errori.
+
+13. **Conformità di Licenza**: Verifica della compatibilità delle licenze delle dipendenze con quella del progetto.
+
+14. **Community e Contributi**: Stabilire linee guida chiare per le contribuzioni esterne.
+
+15. **Internazionalizzazione**: Supporto per più lingue nell'interfaccia utente.
+
+16. **Pacchetti per Gestori di Pacchetti**: Distribuzione attraverso gestori di pacchetti come Homebrew, APT o Conda.
+
+17. **Supporto per Ambienti Virtuali**: Garanzia di compatibilità con ambienti virtuali come Docker e Conda.
+
+Siamo sempre aperti a feedback e contributi per migliorare `biomf2f`. Se hai suggerimenti o vuoi contribuire, per favore apri una issue o una pull request.
 
 ## Licenza
 
