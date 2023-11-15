@@ -70,7 +70,7 @@ The `biomf2f` project is continually evolving. Below is a list of improvements a
 
 16. **Package manager distribution:** distribution through package managers like Homebrew, APT, or Conda.
 
-17. **Support for virtual environments:** ensuring compatibility with wirtual environments like Docker and Conda.
+17. **Support for virtual environments:** ensuring compatibility with virtual environments like Docker and Conda.
 
 We are always open to feedback and contributions to improve `biomf2f`. If you have suggestions or want to contribute, please open an issue or a pull request.
 
