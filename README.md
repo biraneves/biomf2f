@@ -1,87 +1,87 @@
-# biomf2f - Convertitore di File Multi-FASTA
+# biomf2f - Multi-FASTA File Converter
 
-Il `biomf2f` è un'utilità da riga di comando scritta in C++ che consente di dividere un file multi-FASTA in più file FASTA, ciascuno contenente una singola sequenza. Questo strumento è stato progettato per facilitare il lavoro dei bioinformatici e di chiunque lavori con sequenze genetiche, permettendo una gestione più semplice e organizzata dei dati FASTA.
+`biomf2f` is a command-line utility written in C++ that allows the splitting of a multi-FASTA file into multiple FASTA files, each containing a single sequence. This tool has been designed to facilitate the work of bioinformaticians and anyone working with genetic sequences, allowing for a more straightforward and organized management of FASTA data.
 
-## Caratteristiche
+## Features
 
-- **Semplicità**: Un'interfaccia da riga di comando chiara e facile da usare.
-- **Output Verboso**: Opzione `-v` per un output dettagliato che fornisce una tracciabilità delle operazioni eseguite.
-- **Portabilità**: Scritto in C++ standard, `biomf2f` è eseguibile su vari sistemi operativi dove il compilatore C++ è disponibile.
+- **Simplicity:** a clear and easy-to-use command-line interface.
+- **Verbose output:** `-v` option for detailed output providing traceability of the operations performed.
+- **Portability:** written in standard C++, `biomf2f` can be executed on various operating systemas where a C++ compiler is available.
 
-## Dipendenze
+## Dependencies
 
-Assicurati di avere un compilatore C++ (come `g++` o `clang++`) installato sulla tua macchina per compilare il programma.
+Make sure you have a C++ compiler (such as `g++` or `clang++`) installed on your machine to compile the program.
 
-## Compilazione
+## Compilation
 
-Per compilare il programma, usa il seguente comando nel terminale:
-
-```bash
-g++ -o biomf2f biomf2f.cpp
-```
-
-## Uso
-
-Dopo aver copilato il programma, puoi eseguirlo con:
+To compile the program, use the following command in the terminal:
 
 ```bash
-./biomf2f percorso/al/tuo/file.FASTA
+    g++ -o biomf2f biomf2f.cpp
 ```
 
-Per abilitare l'output verboso, aggiungi l'opzione `/v`:
+## Usage
+
+After compiling the program, you can run it with:
 
 ```bash
-./biomf2f percorso/al/tuo/file.FASTA -v
+    ./biomf2f path/to/your/file.fasta
 ```
 
-## Prossimi passi per lo sviluppo di biomf2f
+To enable verbose output, add the `-v` option:
 
-Il progetto `biomf2f` è in continua evoluzione. Di seguito è riportata una lista di miglioramenti e funzionalità che prevediamo di implementare in futuro:
+```bash
+    ./biomf2f path/to/your/file.fasta -v
+```
 
-1. **Supporto per Altri Formati di File**: Aggiunta di compatibilità con formati come GenBank o EMBL.
+## Next steps for biomf2f development
 
-2. **Interfaccia Grafica Utente (GUI)**: Sviluppo di una GUI intuitiva per facilitare l'uso a chi preferisce evitare la linea di comando.
+The `biomf2f` project is continually evolving. Below is a list of improvements and features that we plan to implement in the future:
 
-3. **Validazione dei File di Input**: Implementazione di controlli avanzati per assicurare l'integrità e il formato corretto dei file multi-FASTA.
+1. **Support for other file formats:** adding compatibility with formats like GenBank or EMBL.
 
-4. **Opzioni Avanzate da Linea di Comando**: Inclusione di opzioni per definire un percorso di output e personalizzare prefissi o suffissi dei file risultanti.
+2. **Graphical user interface (GUI):** development of an intuitive GUI to facilitate use by those who prefer to avoid the command line.
 
-5. **Rapporto di Sommario del Processamento**: Generazione di un rapporto post-elaborazione che riassume le sequenze trattate e gli errori rilevati.
+3. **Input file validation:** implementation of advanced checks to ensure the integrity and correct format of multi-FASTA files.
 
-6. **Ottimizzazione delle Prestazioni**: Benchmarking e miglioramento delle prestazioni per il trattamento di file di grandi dimensioni.
+4. **Advanced command-line options:** inclusion of options to define an output path and customize prefixes or suffixes of the resulting files.
 
-7. **Integrazione con Strumenti di Bioinformatica**: Facilitazione dell'integrazione con pipeline e strumenti bioinformatici esistenti.
+5. **Processing summary report:** generation of a post-processing report summarizing the sequences processed and errors detected.
 
-8. **Documentazione Approfondita**: Creazione di documentazione dettagliata con esempi pratici d'uso.
+6. **Performance optimization:** benchmarking and performance improvement for handling large files.
 
-9. **Test Automatizzati**: Sviluppo di test automatici per garantire la stabilità del software.
+7. **Integration with bioinformatics tools:** facilitation of integration with existing bioinformatics pipelines and tools.
 
-10. **Parallelizzazione**: Implementazione del processamento parallelo per sfruttare sistemi multicore.
+8. **Comprehensive documentation:** creation of detailed documentation with practical usage examples.
 
-11. **Installazione Semplificata**: Creazione di script di installazione per vari sistemi operativi.
+9. **Automated testing:** development of automated tests to ensure software stability.
 
-12. **Sistema di Log**: Introduzione di un sistema di log per registrare dettagliatamente le operazioni e gli errori.
+10. **Parallelization:** implementation of parallel processing to take advantage of multicore systems.
 
-13. **Conformità di Licenza**: Verifica della compatibilità delle licenze delle dipendenze con quella del progetto.
+11. **Simplified installation:** creation of installation scripts for various operating systems.
 
-14. **Community e Contributi**: Stabilire linee guida chiare per le contribuzioni esterne.
+12. **Logging system:** introduction of a logging system to record operations and errors in detail.
 
-15. **Internazionalizzazione**: Supporto per più lingue nell'interfaccia utente.
+13. **License compliance:** verification of the compatibility of dependency licenses with the projects license.
 
-16. **Pacchetti per Gestori di Pacchetti**: Distribuzione attraverso gestori di pacchetti come Homebrew, APT o Conda.
+14. **Community and contributions:** establishing clear guidelines for external contributions.
 
-17. **Supporto per Ambienti Virtuali**: Garanzia di compatibilità con ambienti virtuali come Docker e Conda.
+15. **Internationalization:** support for multiple languages in the user interface.
 
-Siamo sempre aperti a feedback e contributi per migliorare `biomf2f`. Se hai suggerimenti o vuoi contribuire, per favore apri una issue o una pull request.
+16. **Package manager distribution:** distribution through package managers like Homebrew, APT, or Conda.
 
-## Licenza
+17. **Support for virtual environments:** ensuring compatibility with wirtual environments like Docker and Conda.
 
-`biomf2f` è distribuito sotto la licenza AGPL. Per maggiori dettagli, vedi il file LICENSE incluso in questo repository.
+We are always open to feedback and contributions to improve `biomf2f`. If you have suggestions or want to contribute, please open an issue or a pull request.
 
-## Contatti
+## License
 
-Se hai domande o commenti, non esitare a contattare il mantainer del progetto.
+`biomf2f` is distributed under the AGPL license. For more details, see the LICENSE file included in this repository.
+
+## Contact
+
+If you have questions or comments, do not hesitate to contact the project maintainer.
 
 ---
 
-Grazie per usare biomf2f nella tua ricerca e sviluppo bioinformatico!
+Thank you for using `biomf2f` in your bioinformatics research and development!
