@@ -1,6 +1,6 @@
-# biomf2f - Convertitore di File Multifasta
+# biomf2f - Convertitore di File Multi-FASTA
 
-Il `biomf2f` è un'utilità da riga di comando scritta in C++ che consente di dividere un file multifasta in più file fasta, ciascuno contenente una singola sequenza. Questo strumento è stato progettato per facilitare il lavoro dei bioinformatici e di chiunque lavori con sequenze genetiche, permettendo una gestione più semplice e organizzata dei dati fasta.
+Il `biomf2f` è un'utilità da riga di comando scritta in C++ che consente di dividere un file multi-FASTA in più file FASTA, ciascuno contenente una singola sequenza. Questo strumento è stato progettato per facilitare il lavoro dei bioinformatici e di chiunque lavori con sequenze genetiche, permettendo una gestione più semplice e organizzata dei dati FASTA.
 
 ## Caratteristiche
 
@@ -25,13 +25,13 @@ g++ -o biomf2f biomf2f.cpp
 Dopo aver copilato il programma, puoi eseguirlo con:
 
 ```bash
-./biomf2f percorso/al/tuo/file.fasta
+./biomf2f percorso/al/tuo/file.FASTA
 ```
 
 Per abilitare l'output verboso, aggiungi l'opzione `/v`:
 
 ```bash
-./biomf2f percorso/al/tuo/file.fasta -v
+./biomf2f percorso/al/tuo/file.FASTA -v
 ```
 
 ## Prossimi passi per lo sviluppo di biomf2f
@@ -42,7 +42,7 @@ Il progetto `biomf2f` è in continua evoluzione. Di seguito è riportata una lis
 
 2. **Interfaccia Grafica Utente (GUI)**: Sviluppo di una GUI intuitiva per facilitare l'uso a chi preferisce evitare la linea di comando.
 
-3. **Validazione dei File di Input**: Implementazione di controlli avanzati per assicurare l'integrità e il formato corretto dei file multifasta.
+3. **Validazione dei File di Input**: Implementazione di controlli avanzati per assicurare l'integrità e il formato corretto dei file multi-FASTA.
 
 4. **Opzioni Avanzate da Linea di Comando**: Inclusione di opzioni per definire un percorso di output e personalizzare prefissi o suffissi dei file risultanti.
 
