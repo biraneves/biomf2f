@@ -3,71 +3,71 @@
 #include <sstream>
 
 int main(int argc, char* argv[]) {
-  bool verboso = false;
+  bool verbose = false;
   
-  // Verifica se è stato fornito un nome di file
+  // Checks if a file name has been provided
   if (argc < 2) {
-    std::cerr << "Uso: biomf2f <file_multifasta>" << std::endl;
+    std::cerr << "Use: biomf2f <multi_fasta_file>" << std::endl;
     return 1;
   }
 
-  // Verifica se esiste l'opzione di output verboso
+  // Check if the verbose output option exists
   if (argc > 2 && std::string(argv[2]) == "-v") {
-      verboso = true;
+      verbose = true;
   }
 
-  // Apre il file multifasta per la lettura
-  std::ifstream fileMultifasta(argv[1]);
+  // Opens the multi-FASTA file for reading
+  std::ifstream multiFastaFile(argv[1]);
 
-  if (!fileMultifasta.is_open()) {
-    std::cerr << "Errore nell'aprire il file" << std::endl;
+  if (!multiFastaFile.is_open()) {
+    std::cerr << "Error opening the file" << std::endl;
     return 1;
   }
 
-  std::string riga;
-  std::ofstream fileFastaCorrente;
-  int numeroDiSequenza = 0;
+  std::string line;
+  std::ofstream currentFastaFile;
+  int sequenceNumber = 0;
 
-  // Elabora il file riga per riga
-  while (std::getline(fileMultifasta, riga)) {
-    // Se la riga è un'intestazione di sequenza
-    if (riga[0] == '>') {
-      if (fileFastaCorrente.is_open()) {
-	fileFastaCorrente.close();
-	if (verboso) std::cout << ". ✔︎" << std::endl;
+  // Process the file line by line
+  while (std::getline(multiFastaFile, line)) {
+    // If the line is a sequence header
+    if (line[0] == '>') {
+      if (currentFastaFile.is_open()) {
+	currentFastaFile.close();
+	if (verbose) std::cout << ". ✔︎" << std::endl;
       }
 
-      if (verboso) std::cout << "Creando il file 'sequenza_" << numeroDiSequenza << ".fasta'.";
+      if (verbose) std::cout << "Creating the file sequence_" << sequenceNumber << ".fasta'.";
 
-      std::ostringstream nomeFile;
-      nomeFile << "sequenza_" << numeroDiSequenza << ".fasta";
-      fileFastaCorrente.open(nomeFile.str());
+      std::ostringstream fileName;
+      fileName << "sequence_" << sequenceNumber << ".fasta";
+      currentFastaFile.open(fileName.str());
 
-      if (!fileFastaCorrente.is_open()) {
-	std::cerr << "Errore nella creazione del file fasta" << std::endl;
+      if (!currentFastaFile.is_open()) {
+	std::cerr << "Error creating the FASTA file" << std::endl;
 	return 1;
       }
 
-      if (verboso) std::cout << ".";
+      if (verbose) std::cout << ".";
 
-      numeroDiSequenza++;
+      sequenceNumber++;
     }
 
-    // Scrivi la linea nel file fasta corrente
-    if (fileFastaCorrente.is_open()) {
-      fileFastaCorrente << riga << '\n';
+    // Write the line to the current fasta file
+    if (currentFastaFile.is_open()) {
+      currentFastaFile << line << '\n';
     }
 
   }
 
-  // Chiude l'ultimo file fasta se è aperto
-  if (fileFastaCorrente.is_open()) {
-    fileFastaCorrente.close();
+  // Closes the last FASTA file if it is open
+  if (currentFastaFile.is_open()) {
+    currentFastaFile.close();
   }
 
-  if (verboso) {
+  if (verbose) {
     std::cout << ". ✔︎" << std::endl;
-    std::cout << "Conclusione dell'elaborazione dei file fasta" << std::endl;
+    std::cout << "Completion of the processing of the FASTA files" << std::endl;
   }
   
   return 0;
